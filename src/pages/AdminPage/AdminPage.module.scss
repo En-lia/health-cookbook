@@ -1,0 +1,49 @@
+.adminPage {
+  padding: 20px 60px;
+
+  &Title {
+    color: var(--indigo-deep);
+    font-weight: 300;
+    font-size: 25px;
+  }
+
+  &ButtonPanel {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: var(--beige);
+  }
+
+  &Button {
+    padding: 10px;
+    border: 1px solid  var(--green);
+    background-color: var(--white);
+    color: var(--green);
+    font-size: 14px;
+    transition: all 200ms ease-in;
+    border-radius: 30px;
+
+    &:hover {
+      background-color: var(--green-light);
+      color: var(--white);
+      border: 1px solid  var(--green-light);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .adminPage {
+    padding: 20px;
+
+    &Title {
+      text-align: center;
+    }
+
+    &ButtonPanel {
+      flex-direction: column;
+
+    }
+  }
+}

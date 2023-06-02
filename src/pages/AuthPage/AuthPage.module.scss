@@ -1,0 +1,73 @@
+.authPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--beige);
+
+  &Wrapper {
+    border-radius: 10px;
+    background: var(--white);
+    box-shadow: 0 0 0 1px rgb(242 243 255);
+    padding: 40px 50px;
+    width: 500px;
+  }
+
+  &Body {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &Title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 300;
+    color: var(--indigo);
+  }
+
+  &ButtonsContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  &AccountButton {
+    font-size: 14px;
+  }
+
+  &EnterButton {
+    padding: 10px 20px;
+    align-self: end;
+    background-color: var(--indigo);
+    color: var(--white);
+    transition: all 200ms ease-in;
+
+    &:hover {
+      background-color: var(--indigo-light);
+    }
+  }
+
+  &BodyTitle {
+    font-weight: 300;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  &ErrorMsg {
+    font-weight: 300;
+    color: var(--deeppink);
+    font-size: 12px;
+    margin-top: 3px;
+  }
+}
+
+@media (max-width: 600px) {
+  .authPage {
+    background-color: var(--white);
+
+    &Wrapper {
+      box-shadow: none;
+    }
+  }
+}

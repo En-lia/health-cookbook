@@ -1,0 +1,31 @@
+// ========== Цвета ============================
+$transparent:    transparent !default;
+
+$white:               #ffffff !default;
+$gray-ultra-light:    #f2f3ff !default; //header back
+$gray-light:          #fafafa !default;
+$gray:                #d9d9d9 !default; //book color
+$gray-deep:           #74777d !default;
+$black:               #000000 !default;
+$indigo-ultra-light:  #aeb2dc !default;
+$indigo-light:        #66629c !default; //book color
+$indigo:              #453c74 !default; //book color
+$indigo-deep:         #071143 !default; //filter back
+$purple:              #a044ff !default;
+$lightpurple:         #f2e6ff !default;
+$lightpink:           #fee2ee !default;
+$pink:                #fd6f97 !default;
+$deeppink:            #c92780 !default;
+$yellow:              #fbd72e !default;
+$beige:               #dfdad8 !default;
+$lightyellow:         #fde9cb !default;
+$lightgreen:          #def4ec !default;
+$lime:                #32d987 !default;
+$green-light:         #9b9d78 !default;
+$green:               #4e5b02 !default;
+$green-deep:          #242a00 !default;
+$steelblue:           #5b7ee5 !default;
+
+$success: $green !default;
+$warning: $yellow !default;
+$danger: $deeppink !default;

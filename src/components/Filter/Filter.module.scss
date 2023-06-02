@@ -1,0 +1,9 @@
+@import '../../styles/_variables';
+
+.filterPanel {
+  &Content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}

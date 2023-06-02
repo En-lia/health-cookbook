@@ -1,0 +1,32 @@
+@import '../../styles/_variables.scss';
+
+.recipes {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat( auto-fill, minmax(380px, 1fr) );
+  padding: 20px 120px;
+
+  &Item {
+    cursor: pointer;
+  }
+
+  &NoFoundPlaceholder {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .recipes {
+    padding: 10px 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .recipes {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+}

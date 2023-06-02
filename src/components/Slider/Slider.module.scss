@@ -1,0 +1,27 @@
+.slider {
+  background-color: var(--gray--deep);
+  position: relative;
+
+  &PrevBtn, &NextBtn {
+    position: absolute;
+    z-index: 2;
+    top: calc(50% - 10px);
+    color: var(--white);
+    opacity: 0.5;
+    cursor: pointer;
+  }
+
+  &PrevBtn {
+    left: 10px;
+  }
+
+  &NextBtn {
+    right: 10px;
+  }
+
+  &BtnDisabled {
+    opacity: 0;
+    cursor: auto;
+    pointer-events: none;
+  }
+}

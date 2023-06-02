@@ -1,0 +1,11 @@
+.userMenu {
+  &Item {
+    color: var(--indigo);
+    width: 100%;
+    text-align: left;
+  }
+
+  &Icon {
+    margin-right: 5px;
+  }
+}

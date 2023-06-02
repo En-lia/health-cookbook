@@ -1,0 +1,32 @@
+.accordion {
+  button.accordionTitle  {
+    background: var(--indigo);
+    color: var(--gray-ultra-light);
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  &TitleIcon {
+    transition: transform 0.2s ease-out;
+    margin-right: 10px;
+  }
+
+  &Body {
+    padding: 0 10px;
+    border-bottom: 1px solid var(--beige);
+    border-left: 1px solid var(--beige);
+    border-right: 1px solid var(--beige);
+    background-color: var(--white);
+    border-radius: 0 0 10px 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  &BodyContainer {
+    margin: 10px 0;
+  }
+}

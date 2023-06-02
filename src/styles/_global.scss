@@ -1,0 +1,13 @@
+@import './_variables';
+
+html {
+  font-family: "Roboto", sans-serif;
+
+  & a, a:link, a:visited {
+    color: var(--indigo-light);
+  }
+
+  & a:hover {
+    color: var(--indigo-ultra-light);
+  }
+}

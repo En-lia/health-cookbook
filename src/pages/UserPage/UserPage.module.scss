@@ -1,0 +1,67 @@
+.userPage {
+  padding: 20px 60px;
+
+  &Title {
+    color: var(--indigo-deep);
+    font-weight: 300;
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+
+  &Content {
+    display: grid;
+    color: var(--gray-deep);
+    font-weight: 300;
+    gap: 20px;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+            "navbar info"
+            "navbar info";
+  }
+
+  &ContentTitle {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--indigo);
+    margin-bottom: 20px;
+  }
+
+  &Info {
+    display: flex;
+    gap: 20px;
+    grid-area: info;
+    font-weight: 300;
+  }
+
+  &Navbar {
+    grid-area: navbar;
+  }
+
+  &InfoItem {
+    margin-bottom: 10px;
+  }
+
+  &InfoTitle {
+    color: var(--indigo-deep);
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .userPage {
+    padding: 20px;
+
+    &Title {
+      text-align: center;
+    }
+
+    &Content {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+            "navbar"
+            "info";
+    }
+  }
+}

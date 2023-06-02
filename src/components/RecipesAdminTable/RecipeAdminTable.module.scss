@@ -1,0 +1,38 @@
+.recipeAdminTable {
+  overflow: auto;
+
+  & td {
+    &:first-child {
+      width: 40px;
+    }
+  }
+
+  & th {
+    &:first-child {
+      width: 40px;
+    }
+  }
+
+  &Title {
+    font-weight: 400;
+    color: var(--green);
+    margin-bottom: 10px;
+  }
+
+  &EditBtn {
+    color: var(--gray-deep);
+
+    &:hover {
+      color: var(--green);
+    }
+  }
+
+  &DeleteBtn {
+    color: var(--gray-deep);
+
+    &:hover {
+      color: var(--deeppink);
+    }
+  }
+}
+

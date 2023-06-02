@@ -1,0 +1,64 @@
+@import '../../../styles/_variables';
+
+.input {
+  height: 32px;
+
+  input {
+    height: 100%;
+    color: inherit;
+  }
+  input::placeholder {
+    color: rgba(0, 0, 0, 0.25);
+  }
+
+  &Focused .inputFieldWrapper {
+    border-color: var(--green-light);
+    box-shadow: 0 0 0 2px rgb(81 71 13 / 19%);
+    outline: 0;
+  }
+
+  &Hovered .inputFieldWrapper {
+    border-color: var(--green-light);
+  }
+
+  &FieldWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    background-color: var(--white);
+    border-radius: 5px;
+    border: 1px solid var(--gray);
+    cursor: text;
+    transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  &Field {
+    width: 100%;
+    min-width: 1px;
+    margin: 0;
+    font-family: inherit;
+    background-color: var(--transparent);
+    border: none;
+    outline: none;
+  }
+
+  &ClearButton {
+    color: var(--gray);
+
+    &:hover {
+      color: var(--indigo);
+    }
+  }
+
+  &PrependContent {
+    margin-right: 10px;
+  }
+
+  &AppendContent {
+    margin-left: 10px;
+  }
+}

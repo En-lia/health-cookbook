@@ -1,0 +1,60 @@
+.adminModal {
+  &Title {
+    font-weight: 300;
+    color: var(--green-deep);
+    margin-bottom: 20px;
+  }
+
+  &Body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &BodyTitle {
+    font-weight: 300;
+    color: var(--green);
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  &ErrorMsg {
+    font-weight: 300;
+    color: var(--deeppink);
+    font-size: 12px;
+    margin-top: 3px;
+  }
+
+  &CloseButton {
+    padding: 10px 20px;
+    background-color: var(--white);
+    border: 1px solid var(--indigo);
+    color: var(--indigo);
+    transition: all 200ms ease-in;
+
+    &:hover {
+      background-color: var(--indigo-light);
+      color: var(--white);
+      border-color: var(--indigo-light) ;
+    }
+  }
+
+  &Button {
+    padding: 10px 20px;
+    background-color: var(--indigo);
+    color: var(--white);
+    transition: all 200ms ease-in;
+
+    &:hover {
+      background-color: var(--indigo-light);
+    }
+  }
+
+  &Footer{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+  }
+
+}

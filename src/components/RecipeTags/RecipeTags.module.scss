@@ -1,0 +1,13 @@
+@import '../../styles/_variables.scss';
+
+.recipeTags {
+  color: inherit;
+  display: flex;
+  gap: 5px;
+
+  &Item {
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@import '../../styles/_variables';
+
+.burgerMenu {
+    position: relative;
+    height: 30px;
+    width: 30px;
+}
+
+.menuBtn{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.menuToggle{
+    opacity: 0;
+}
+
+.menuBtn > span,
+.menuBtn > span::before,
+.menuBtn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--indigo);
+    transition-duration: .25s;
+}
+.menuBtn > span::before {
+    content: '';
+    top: -10px;
+}
+.menuBtn > span::after {
+    content: '';
+    top: 10px;
+}
+
+.menuToggle:checked ~ .menuBtn > span{
+    transform: rotate(45deg);
+}
+.menuToggle:checked ~ .menuBtn > span::before{
+    top: 0;
+    transform: rotate(0);
+}
+.menuToggle:checked ~ .menuBtn > span::after{
+    top: 0;
+    transform: rotate(90deg);
+}

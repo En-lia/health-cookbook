@@ -1,0 +1,21 @@
+@import '../../styles/_variables';
+
+.footer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+    align-items: center;
+    height: 140px;
+    color: var(--gray-light);
+    background: var(--green-deep);
+    font-size: 12px;
+    font-weight: 100;
+    box-shadow: 0 0 2px 1px rgb(36, 44, 3);
+    padding: 10px 40px;
+
+    &Logo {
+        height: 100px;
+        display: block;
+        filter: brightness(5) sepia(0) hue-rotate(0deg) saturate(0);
+    }
+}

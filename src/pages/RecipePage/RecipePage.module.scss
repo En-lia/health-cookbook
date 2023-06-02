@@ -1,0 +1,289 @@
+.recipePage {
+  background: var(--white);
+  box-shadow: 2px -1px 13px 0 rgba(185, 187, 206, 0.2);
+  max-width: 1200px;
+  margin: 0 auto;
+  font-weight: 100;
+  font-size: 16px;
+  text-align: justify;
+
+  &Header {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    color: var(--white);
+    width: 100%;
+    padding: 20px 40px;
+    aspect-ratio: 26/9;
+
+    &:before {
+      content: '';
+      position: absolute;
+      height: 20%;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      background: linear-gradient(to top, rgba(36, 42, 0, 0.8), transparent);
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 70%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(to bottom, rgba(52, 45, 84, 0.9), transparent);
+    }
+  }
+
+  &HeaderPhoto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+
+  &HeaderTopPanel {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--gray);
+    align-items: end;
+    padding-bottom: 10px;
+  }
+
+  &HeaderBottomPanel {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+  }
+
+  &HeaderTextContent {
+    z-index: 1;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &Tags {
+    opacity: 0.8;
+  }
+
+  &Title {
+    margin-bottom: 10px;
+    color: var(--white);
+    opacity: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  &Subtitle {
+    margin-bottom: 10px;
+    color: var(--green-deep);
+  }
+
+  &InfoBlock {
+    display: grid;
+    margin-bottom: 20px;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+            "a b"
+            "a b";
+  }
+
+  &Notes{
+    padding: 15px 20px;
+    border-radius: 10px;
+    background: linear-gradient(0deg, transparent 45%, #f6f7ed 45%, #f6f7ed 55%, transparent 55%, transparent 20%, #f6f7ed 20%, #f6f7ed 30%,transparent 30%);
+    background-size: 1em 1em;
+    background-color: var(--gray-light);
+    grid-area: c;
+  }
+
+  &Benefits,
+  &Preparation {
+    padding: 15px 20px;
+    border-radius: 10px;
+    background: radial-gradient(circle at top, transparent 14%, #ffffff 15%, #ffffff 19%, transparent 20%), radial-gradient(circle at bottom, transparent 14%, #ffffff 15%, #ffffff 19%, transparent 20%), radial-gradient(circle at right, transparent 14%, #ffffff 15%, #ffffff 19%, transparent 20%), radial-gradient(circle at left, transparent 14%, #ffffff 15%, #ffffff 19%, transparent 20%);
+    background-size: 4em 4em;
+    background-color: var(--gray-light);
+  }
+
+  &Benefits {
+    grid-area: a;
+  }
+
+  &InfoContainer {
+    padding: 30px 25px;
+  }
+
+  &Preparation {
+    grid-area: b;
+    & li {
+      list-style-type: circle;
+      list-style-position: outside;
+    }
+  }
+
+  &Ingredients {
+    margin-bottom: 20px;
+    border: 1px solid var(--green);
+    border-radius: 10px;
+    padding: 15px 30px;
+  }
+
+  &Ingredient {
+    display: flex;
+    margin-bottom: 10px;
+
+    &Separator {
+      flex: 1;
+      border-bottom: 1px dotted var(--green);
+    }
+
+    &Amount {
+      font-weight: 400;
+      color: var(--green);
+    }
+  }
+
+  &CookingContainer {
+    display: flex;
+    gap: 20px;
+    background: var(--gray-light);
+    border-radius: 10px;
+    padding: 30px;
+  }
+
+  &Cooking {
+    line-height: 1.5em;
+    flex: 1;
+  }
+
+  &CookingSlider {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+  }
+
+  &CookingSlide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &Slider {
+    width: 500px;
+    height: 250px;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+
+  &SimilarSubtitle {
+    color: var(--white);
+    background-color: var(--green);
+    padding: 10px 0;
+    text-align: center;
+    font-weight: 100;
+    border-radius: 10px 10px 0 0;
+  }
+
+  &SimilarRecipesContainer{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    padding: 30px 20px;
+  }
+
+  &SimilarRecipes {
+    background-color: var(--gray-light);
+    border-radius: 0 0 10px 10px;
+    margin: 60px 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .recipePage {
+    &Ingredient {
+      flex-direction: column;
+
+      &:last-child .recipePageIngredientSeparator {
+        display: none;
+      }
+    }
+
+    &IngredientSeparator {
+      order: 3;
+    }
+
+    &CookingContainer {
+      padding: 20px 0;
+      gap: 10px;
+    }
+
+    &SimilarRecipesContainer{
+      padding: 30px 10px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .recipePage {
+    &Header {
+      padding: 20px;
+      aspect-ratio: 16/9;
+    }
+
+    &Ingredients {
+      text-align: start;
+      padding:15px;
+    }
+
+    &Cooking {
+      padding:15px;
+    }
+
+    &CookingContainer {
+      flex-direction: column;
+    }
+
+    &InfoBlock {
+      grid-template-areas:
+        "a b"
+        "a b";
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .recipePage {
+    font-size: 14px;
+
+    &InfoContainer {
+      padding: 20px;
+    }
+
+
+    &InfoBlock {
+      grid-template-areas:
+            "a a"
+            "b b";
+    }
+
+    &SimilarRecipesContainer {
+      grid-template-columns: 1fr;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.chip {
+  border: 1px solid var(--green-light);
+  border-radius: 20px;
+  padding: 5px 10px;
+  color: var(--indigo-deep);
+  font-weight: 300;
+  font-size: 14px;
+  transition: all 200ms ease-in;
+
+  &:hover {
+    box-shadow: 0 3px 8px 0 rgb(154 157 120)
+  }
+
+  &Active {
+    background-color: var(--green-light);
+    color: var(--white);
+  }
+}

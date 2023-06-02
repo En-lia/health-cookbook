@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 100;
+  src: local("Roboto"),
+  url("/src/assets/fonts/roboto-100.woff2") format("woff2"),
+  url("/src/assets/fonts/roboto-100.woff") format("woff"),
+  url("/src/assets/fonts/roboto-100.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Roboto"),
+  url("/src/assets/fonts/roboto-300.woff2") format("woff2"),
+  url("/src/assets/fonts/roboto-300.woff") format("woff"),
+  url("/src/assets/fonts/roboto-300.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto"),
+  url("/src/assets/fonts/roboto-regular.woff2") format("woff2"),
+  url("/src/assets/fonts/roboto-regular.woff") format("woff"),
+  url("/src/assets/fonts/roboto-regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Roboto"),
+  url("/src/assets/fonts/roboto-500.woff2") format("woff2"),
+  url("/src/assets/fonts/roboto-500.woff") format("woff"),
+  url("/src/assets/fonts/roboto-500.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Roboto"),
+  url("/src/assets/fonts/roboto-700.woff2") format("woff2"),
+  url("/src/assets/fonts/roboto-700.woff") format("woff"),
+  url("/src/assets/fonts/roboto-700.ttf") format("ttf");
+}

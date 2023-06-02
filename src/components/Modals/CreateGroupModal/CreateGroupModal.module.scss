@@ -1,0 +1,11 @@
+.createGroupModal {
+  &Content {
+    width: 320px;
+  }
+}
+
+@media (max-width: 450px) {
+  .createGroupModalContent {
+    width: inherit;
+  }
+}
