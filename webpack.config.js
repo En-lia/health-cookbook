@@ -10,7 +10,7 @@ module.exports ={
     mode: process.env.NODE_ENV === "production" ? "production" : "development",
     entry: ["@babel/polyfill", "./src/index.tsx"],
     output: {
-        path: path.resolve(__dirname, "dist"),
+        path: path.resolve(__dirname, "build"),
         filename: "[name].[hash].js",
         publicPath: '/',
     },
