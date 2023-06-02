@@ -12,7 +12,7 @@ module.exports ={
     output: {
         path: path.resolve(__dirname, "docs"),
         filename: "[name].[hash].js",
-        publicPath: '/health-cookbook/',
+        publicPath: process.env.NODE_ENV === "production" ? '/health-cookbook/' : '/',
     },
     devServer: {
         port: 3000,
@@ -47,7 +47,10 @@ module.exports ={
             },
             {
                 test: /\.(jpg|jpeg|png|svg)$/,
-                use: ["file-loader"]
+                loader: "file-loader",
+                options: {
+                    name: 'assets/images/[name].[ext]'
+                }
             },
             {
                 test: /\.(js|jsx)$/,

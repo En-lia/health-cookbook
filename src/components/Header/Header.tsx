@@ -7,6 +7,7 @@ import SearchPanel from '../SearchPanel/SearchPanel';
 import { Context } from '../App/App';
 import { MAIN_PAGE_ROUTE } from '../../utils/const';
 import UserMenu from '../UserMenu/UserMenu';
+import logo from '/src/assets/images/logov4.jpg'
 
 const Header: FC = observer(() => {
     const { user } = useContext(Context);
@@ -16,7 +17,7 @@ const Header: FC = observer(() => {
             <header className={classes.header}>
                 <Link className={classes.headerLogo} to={MAIN_PAGE_ROUTE}>
                     <img
-                        src="/assets/images/logov4.jpg"
+                        src={logo}
                         alt="logo"
                         className={classes.headerLogoIcon}
                     />
