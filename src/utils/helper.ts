@@ -1,5 +1,5 @@
 import { COLORS } from '../styles/colors';
-import { ROLES } from '../../../server/utils/CONST';
+import { ROLES } from '../utils/const';
 import { UserType } from '../service/user/UserAPI';
 
 export const resolveColor = (color:string) => {

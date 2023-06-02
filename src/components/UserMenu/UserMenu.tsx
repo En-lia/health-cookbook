@@ -16,7 +16,6 @@ import {
     USER_PAGE_ROUTE,
 } from '../../utils/const';
 import classes from './UserMenu.module.scss';
-import { ROLES } from '../../../../server/utils/CONST';
 import HCButton from '../UI/Button/HCButton';
 import { Context } from '../App/App';
 import { UserType } from '../../service/user/UserAPI';

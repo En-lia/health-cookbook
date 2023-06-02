@@ -17,3 +17,8 @@ export const INGREDIENT_AMOUNT_TEXT = {
     teaspoon: 'ч. л.',
     taste: 'по вкусу',
 };
+export const ROLES = {
+    admin: 1,
+    superadmin: 2,
+    user: 3,
+};

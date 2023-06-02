@@ -1,0 +1,71 @@
+module.exports = {
+    env: {
+        browser: true,
+        es2021: true,
+    },
+    extends: [
+        'airbnb',
+        'airbnb-typescript',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:react-hooks/recommended',
+        'plugin:react/recommended',
+    ],
+    overrides: [
+    ],
+    parserOptions: {
+        //     ecmaVersion: 'latest',
+        //     sourceType: 'module',
+        project: ['./tsconfig.json'],
+    },
+    plugins: [
+        'react',
+    ],
+    ignorePatterns: ['webpack.config.js'],
+    rules: {
+        'import/extensions': [
+            'error',
+            'ignorePackages',
+            {
+                '': 'never',
+                'js': 'never',
+                'jsx': 'never',
+                'ts': 'never',
+                'tsx': 'never',
+            },
+        ],
+        'react/function-component-definition': [
+            2,
+            {
+                namedComponents: 'arrow-function',
+                unnamedComponents: 'arrow-function',
+            },
+        ],
+        'react/jsx-indent': [2, 4],
+        'react/jsx-indent-props': [2, 4],
+        '@typescript-eslint/indent': [2, 4],
+        '@typescript-eslint/lines-between-class-members': 0,
+        'no-underscore-dangle': 0,
+        'eol-last': 0,
+        'react/button-has-type': 0,
+        'react/jsx-props-no-spreading': 0,
+        'object-curly-newline': 0,
+        'react/require-default-props': 0,
+        'react-hooks/exhaustive-deps': [2],
+        'max-len': 0,
+        'jsx-a11y/label-has-associated-control': [2, {
+            labelComponents: ['CustomInputLabel'],
+            labelAttributes: ['label'],
+            controlComponents: ['CustomInput'],
+            depth: 3,
+        }],
+        'jsx-a11y/click-events-have-key-events': 0,
+        'jsx-a11y/no-static-element-interactions': 0,
+        'import/prefer-default-export': 0,
+        'arrow-body-style': 0,
+        'function-paren-newline': 0,
+        'quote-props': [2, 'consistent'],
+        'consistent-return': 0,
+        'react/no-array-index-key': 0,
+        'import/no-cycle': 0,
+    },
+};
