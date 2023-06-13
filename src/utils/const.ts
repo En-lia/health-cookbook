@@ -1,12 +1,13 @@
-export const ADMIN_ROUTE = '/admin';
-export const LOGIN_ROUTE = '/login';
-export const REGISTRATION_ROUTE = '/registration';
-export const MAIN_PAGE_ROUTE = '/';
-export const RECIPE_ROUTE = '/recipe';
-export const USER_PAGE_ROUTE = '/user';
-export const FAVORITES_PAGE_ROUTE = '/favorites';
-export const MENUBOOK_PAGE_ROUTE = '/menubook';
-export const DETOX_PAGE_ROUTE = '/detox';
+export const BASE_URL = process.env.NODE_ENV === "production" ? '/health-cookbook/' : '/';
+export const ADMIN_ROUTE = `${BASE_URL}admin`;
+export const LOGIN_ROUTE = `${BASE_URL}login`;
+export const REGISTRATION_ROUTE = `${BASE_URL}registration`;
+export const MAIN_PAGE_ROUTE = `${BASE_URL}`;
+export const RECIPE_ROUTE = `${BASE_URL}recipe`;
+export const USER_PAGE_ROUTE = `${BASE_URL}user`;
+export const FAVORITES_PAGE_ROUTE = `${BASE_URL}favorites`;
+export const MENUBOOK_PAGE_ROUTE = `${BASE_URL}menubook`;
+export const DETOX_PAGE_ROUTE = `${BASE_URL}detox`;
 export const INGREDIENT_AMOUNT_TEXT = {
     count: 'шт',
     grams: 'г',

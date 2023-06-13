@@ -53,6 +53,13 @@ module.exports ={
                 }
             },
             {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/fonts/[name][ext]',
+                },
+            },
+            {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: {
