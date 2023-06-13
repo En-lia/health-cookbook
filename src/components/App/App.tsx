@@ -1,6 +1,7 @@
 import React, { FC, createContext, useState, useCallback } from 'react';
 import { observer } from 'mobx-react-lite';
-import { BrowserRouter } from 'react-router-dom';
+// import { BrowserRouter } from 'react-router-dom'; //for gh page
+import { HashRouter } from 'react-router-dom';
 import {
     QueryClient,
     QueryClientProvider,
@@ -64,11 +65,11 @@ const App: FC = observer(() => {
         >
             {/* <React.StrictMode> */}
             <QueryClientProvider client={queryClient}>
-                <BrowserRouter>
+                <HashRouter>
                     <ScrollToTop />
                     <GlobalHistory />
                     <AppRouter />
-                </BrowserRouter>
+                </HashRouter>
             </QueryClientProvider>
             {/* </React.StrictMode> */}
         </Context.Provider>

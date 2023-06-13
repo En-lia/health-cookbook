@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import classNames from 'classnames';
 import classes from './NoFoundPlaceholder.module.scss';
+import noResultImg from '../../../assets/images/placeholders/noResult.svg'
 
 type NoFoundPlaceholderProps = {
     className?: string,
@@ -11,7 +12,7 @@ const NoFoundPlaceholder:FC<NoFoundPlaceholderProps> = ({ className }) => {
 
     return (
         <div className={noFoundPlaceholderClassName}>
-            <img alt="Ничего не найдено" src="/assets/images/placeholders/noResult.svg" />
+            <img alt="Ничего не найдено" src={noResultImg} />
             <h4> НИЧЕГО НЕ НАЙДЕНО :( </h4>
         </div>
     );
