@@ -31,7 +31,7 @@ export type SelectedTagType = {
 const App: FC = observer(() => {
     const [selectedTags, setSelectedTags] = useState<SelectedTagType | null>(null);
     const [page, setPage] = useState(1);
-    const [limit, setLimit] = useState(10);
+    const [limit, setLimit] = useState(9);
 
     const setSelectedTag = useCallback((tagId:number) => {
         if (!tagId) return setSelectedTags(null);

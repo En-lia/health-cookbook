@@ -96,7 +96,7 @@ const CreateRecipeForm:FC<CreateRecipeFormProps> = ({ recipeId, onClose, onSucce
         return options;
     }, [tags]);
 
-    const { isLoading: isRecipesLoading, data: recipes } = useGetRecipes({}, {});
+    const { isLoading: isRecipesLoading, data: recipes } = useGetRecipes({}, {limit:100});
     const helpfulRecipeOptions = useMemo(() => {
         const options: { value: number, label: string }[] = [];
         recipes?.data?.forEach((rec: GetRecipeType) => {

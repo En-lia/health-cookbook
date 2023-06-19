@@ -1,4 +1,4 @@
-import React, { FC, useMemo, useCallback, useContext } from 'react';
+import React, {FC, useMemo, useCallback, useContext, useState} from 'react';
 import { Space, Table, Popconfirm, notification } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
@@ -12,38 +12,9 @@ import { GetRecipeType, RecipesType } from '../../service/recipes/RecipeAPI';
 import { ModalContext } from '../AppRouter/AppRouter';
 import { UserType } from '../../service/user/UserAPI';
 import { OpenNotificationType } from '../../utils/types';
-
-// const columns = [
-// {
-//     title: 'Польза',
-//     dataIndex: 'benefit',
-//     key: 'benefit',
-// },
-// {
-//     title: 'Приготовление',
-//     dataIndex: 'cooking',
-//     key: 'cooking',
-// },
-// {
-//     title: 'Теги',
-//     dataIndex: 'tags',
-//     key: 'tags',
-//     render: (_:any, { tags }: { tags: TagType[] }) => (
-//         <>
-//             {tags.map((tag) => {
-//                 const color = (tag.group.title === 'meals' || tag.group.title === 'types') ? 'green' : 'yellow';
-//
-//                 return (
-//                     <Tag color={color} key={tag.id}>
-//                         {tag.label}
-//                     </Tag>
-//                 );
-//             })}
-//         </>
-//     ),
-// },
-// ...actionColumn,
-// ];
+import {Link} from "react-router-dom";
+import {MAIN_PAGE_ROUTE, RECIPE_ROUTE} from "../../utils/const";
+import {Context} from "../App/App";
 
 const RecipesAdminTable:FC = () => {
     const [api, contextHolder] = notification.useNotification();
@@ -57,7 +28,10 @@ const RecipesAdminTable:FC = () => {
         });
     };
 
-    const { isLoading: isRecipesLoading, data: recipes } = useGetRecipes({}, { limit: 100 });
+    const [currentPage, setCurrentPage] = useState(1);
+    const [limit, setLimit] = useState(5);
+
+    const { isLoading: isRecipesLoading, data: recipes } = useGetRecipes({}, { limit, page: currentPage });
 
     const dataSource = useMemo(() => {
         return recipes?.data.map((recipe) => {
@@ -96,11 +70,6 @@ const RecipesAdminTable:FC = () => {
         deleteRecipe(record.id);
     }, [deleteRecipe]);
 
-    const tableChangeHandler = useCallback((data: any) => {
-        console.log('tableChangeHandler');
-        console.log(data);
-    }, []);
-
     const columns = useMemo(() => {
         return [
             {
@@ -122,6 +91,13 @@ const RecipesAdminTable:FC = () => {
                 title: 'Название',
                 dataIndex: 'title',
                 key: 'title',
+                render: (_: any, record: GetRecipeType) => {
+                    return (
+                        <Space size="middle">
+                           <Link to={`${RECIPE_ROUTE}/${record.id}`}>{record.title}</Link>
+                        </Space>
+                    );
+                },
             },
             {
                 title: 'Действия',
@@ -156,6 +132,10 @@ const RecipesAdminTable:FC = () => {
         ];
     }, [deleteRecipeHandler, showRecipeModal]);
 
+    const pageChangeHandler = useCallback((page:number)=> {
+        setCurrentPage(page);
+    }, [])
+
     if (isRecipesLoading) {
         return <div><HCLoader /></div>;
     }
@@ -164,7 +144,11 @@ const RecipesAdminTable:FC = () => {
         <div className={classes.recipeAdminTable}>
             {contextHolder}
             <h3 className={classes.recipeAdminTableTitle}>Рецепты</h3>
-            <Table bordered dataSource={dataSource} columns={columns} onChange={tableChangeHandler} />
+            <Table
+                bordered
+                dataSource={dataSource}
+                columns={columns}
+                pagination={{ total: recipes.count, current: currentPage, onChange: pageChangeHandler, defaultPageSize: limit }}/>
         </div>
     );
 };

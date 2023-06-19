@@ -19,7 +19,7 @@ type CreateGroupFormProps = {
 };
 
 const CreateProductForm:FC<CreateGroupFormProps> = ({ onClose, onSuccess }) => {
-    const { isLoading: isRecipesLoading, data: recipes } = useGetRecipes({}, {});
+    const { isLoading: isRecipesLoading, data: recipes } = useGetRecipes({}, {limit: 100});
 
     const productRecipeOptions = useMemo(() => {
         const options: { value: number, label: string }[] = [];

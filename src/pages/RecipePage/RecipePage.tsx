@@ -91,7 +91,7 @@ const RecipePage: FC = () => {
         const products:{ id: number, product: string, preparation: string }[] = [];
 
         recipe?.ingredients.forEach((i:GetIngredientType) => {
-            if (i.preparation.length) {
+            if (i.preparation?.length) {
                 products.push({
                     id: i.product.id,
                     product: i.product.label,

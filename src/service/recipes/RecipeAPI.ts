@@ -35,11 +35,11 @@ export type RecipesType = {
     data: GetRecipeType[]
 };
 
-export const getRecipes = async ({ selectedTags, page, limit, searchQuery } :APIRecipesParameters):Promise<RecipesType> => {
+export const getRecipes = async ({ selectedTags, pageParam, page, limit, searchQuery } :APIRecipesParameters):Promise<RecipesType> => {
     const { data } = await $authHost.get('api/recipe', {
         params: {
             tags: selectedTags,
-            page,
+            page: pageParam || page,
             limit,
             searchQuery,
         } });
