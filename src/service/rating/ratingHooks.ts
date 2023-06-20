@@ -32,16 +32,27 @@ const updateRecipesInCache = async (client: QueryClient, userId: number, newRati
     const previousRecipes = client.getQueryData(queryKey);
 
     if (previousRecipes) {
-        client.setQueryData(queryKey, (oldRecipes: RecipesType) => {
-            const recipeIndex = oldRecipes?.data.findIndex((r) => r.id === recipeId);
+        client.setQueryData(queryKey, (oldRecipes: { pages: RecipesType[] }) => {
+            let rowIndex:number = null;
+            let recipeIndex:number = -1;
+
+            oldRecipes?.pages.forEach((row, index) => {
+                const recipeIndexItem = row?.data.findIndex((r) => r.id === recipeId);
+
+                if (recipeIndexItem !== -1) {
+                    rowIndex = index;
+                    recipeIndex = recipeIndexItem
+                }
+
+            });
 
             if (recipeIndex === -1) return;
 
             const newRecipes = { ...oldRecipes };
-            newRecipes.data[recipeIndex].ratings = [{
+            newRecipes.pages[rowIndex].data[recipeIndex].ratings = [{
                 rate: newRating.rate,
                 recipeId,
-            }];
+            }]
 
             return newRecipes;
         });

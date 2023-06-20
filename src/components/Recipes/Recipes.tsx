@@ -12,7 +12,7 @@ import { debounce } from 'lodash';
 
 const Recipes: FC = () => {
     const navigate = useNavigate();
-    const { filter: { selectedTags, setSelectedTag, limit } } = useContext(Context);
+    const { filter: { selectedTags, setSelectedTag, page, limit } } = useContext(Context);
     const allSelectedTags = useMemo(() => selectedTags && Object.keys(selectedTags), [selectedTags]);
     const [currentPage, setCurrentPage] = useState(1);
     const { isLoading: isRecipesLoading, data:recipes, fetchNextPage } = useGetInfiniteRecipes(
@@ -21,7 +21,7 @@ const Recipes: FC = () => {
                 return  currentPage <  Math.ceil(lastPage.count/limit ) ? currentPage + 1 : undefined;
             },
         },
-        { selectedTags: allSelectedTags, limit });
+        { selectedTags: allSelectedTags, limit, page });
 
     const recipesData = useMemo(()=>{
         return recipes?.pages.map(item => item.data).flat();
