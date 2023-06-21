@@ -37,9 +37,9 @@ _The application implements a search by recipes, by tags, and you can also put d
 In the future, it will be possible to add to the personal menu for a week with a list of products and create detox programs._
 
 <div align="center">
-<img width="300" alt="searchPanel" src="public/images/searchPanel.gif"> </img>
-<img width="300" alt="searchByTags" src="public/images/searchByTags.gif"> </img>
-<img width="300" alt="rating" src="public/images/rating.gif"> </img>
+<img width="250" alt="searchPanel" src="public/images/searchPanel.gif"> </img>
+<img width="250" alt="searchByTags" src="public/images/searchByTags.gif"> </img>
+<img width="250" alt="rating" src="public/images/rating.gif"> </img>
 </div>
 
 <hr>
@@ -47,9 +47,9 @@ In the future, it will be possible to add to the personal menu for a week with a
 _The application also has an administrative part with an interface for adding, editing and deleting recipes._
 
 <div align="center">
-<img width="300" alt="addingRecipe" src="public/images/addingRecipe.gif"> </img>
-<img width="300" alt="adminModals" src="public/images/adminModals.gif"> </img>
-<img width="300" alt="auth" src="public/images/auth.gif"> </img>
+<img width="250" alt="addingRecipe" src="public/images/addingRecipe.gif"> </img>
+<img width="250" alt="adminModals" src="public/images/adminModals.gif"> </img>
+<img width="250" alt="auth" src="public/images/auth.gif"> </img>
 </div>
 
 <hr>
