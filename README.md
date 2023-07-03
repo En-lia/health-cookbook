@@ -6,7 +6,7 @@ The backend part is in a different repository and implemented on a _local server
 
 ## Technology Stack
 ### Frontend:
-HTML5, CSS3, JavaScript, React, React-router-dom, TypeScript, Axios, MobX, React Query, webpack, Ant Design
+HTML5, CSS3, JavaScript, React, React Router, TypeScript, Axios, MobX, React Query, webpack, Ant Design
 
 <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="30" height="30"/> </a>
 <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="30" height="30"/> </a> 
