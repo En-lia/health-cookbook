@@ -53,7 +53,10 @@ const AuthPage:FC = observer(() => {
                 });
             },
             onError: (e) => {
-                const { message } = e.response.data;
+                let { message } = e.response?.data || e;
+
+                if (e.code ==='ERR_NETWORK') message = 'Похоже, что сервер недоступен'
+
                 openNotification({ message, type: 'error' });
             },
         });
@@ -66,7 +69,10 @@ const AuthPage:FC = observer(() => {
                 navigate(MAIN_PAGE_ROUTE);
             },
             onError: (e) => {
-                const { message } = e.response.data;
+                let { message } = e.response?.data || e;
+
+                if (e.code ==='ERR_NETWORK') message = 'Похоже, что сервер недоступен';
+
                 openNotification({ message, type: 'error' });
             },
         });
